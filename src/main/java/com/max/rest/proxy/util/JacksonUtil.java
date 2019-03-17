@@ -28,7 +28,6 @@ public class JacksonUtil {
         getterSetterMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
     }
 
-
     public static String toJson(Object obj) {
         try {
             return getterSetterMapper.writeValueAsString(obj);
@@ -46,7 +45,6 @@ public class JacksonUtil {
             throw new RestProxyRuntimeException(-1, e.getMessage());
         }
     }
-
 
     public static String toJsonUseProperty(Object obj) {
         try {

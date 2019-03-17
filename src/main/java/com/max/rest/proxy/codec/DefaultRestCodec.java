@@ -16,8 +16,6 @@ public class DefaultRestCodec extends AbstractRestCodeC {
 
     @Override
     public <T> T decodeResult(int statusCode, Map<String, List<String>> headers, byte[] bytes, Class<T> clazz) {
-        T ret = JsonUtil.fromJson(new String(bytes, StandardCharsets.UTF_8), clazz);
-        return ret;
+        return JsonUtil.fromJson(new String(bytes, StandardCharsets.UTF_8), clazz);
     }
-
 }

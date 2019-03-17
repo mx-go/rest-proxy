@@ -13,8 +13,9 @@ public abstract class JsonUtil {
 
     private static Gson gson = new GsonBuilder().
             registerTypeAdapter(Double.class, (JsonSerializer<Double>) (src, typeOfSrc, context) -> {
-                if (src == src.longValue())
+                if (src == src.longValue()) {
                     return new JsonPrimitive(src.longValue());
+                }
                 return new JsonPrimitive(src);
             }).create();
 
@@ -43,7 +44,6 @@ public abstract class JsonUtil {
         return gson.fromJson(json, clazz);
     }
 
-
     public static <T> T fromFile(String file, Class<T> clazz) throws IOException {
         return fromJson(
                 IOUtils.toString(JsonUtil.class.getClassLoader().getResourceAsStream(file))
@@ -53,6 +53,5 @@ public abstract class JsonUtil {
     public static <T> T fromJson(String json, Type clazz) {
         return gson.fromJson(json, clazz);
     }
-
 
 }

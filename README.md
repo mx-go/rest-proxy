@@ -7,6 +7,8 @@ rest接口代理使用方法：
 
 `value`：对应*rest-proxy.json*中key值。在这里为*sendHttp*。
 
+`desc`：描述接口的备注，仅作为展示。
+
 `codec`：目前只有一种*com.max.rest.proxy.codec.DefaultRestCodec*。
 
 `contentType`：HTTP请求时的*Content-Type*。
@@ -16,6 +18,8 @@ rest接口代理使用方法：
 可选有@GET、@POST、@PUT、@DELETE。
 
 `value`：请求路径。
+
+`desc`：描述方法的备注，仅作为展示。
 
 `contentType`：HTTP请求时的*Content-Type*。
 

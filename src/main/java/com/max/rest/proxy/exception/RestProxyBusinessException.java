@@ -1,6 +1,5 @@
 package com.max.rest.proxy.exception;
 
-
 public class RestProxyBusinessException extends RestProxyRuntimeException {
     public RestProxyBusinessException(int code) {
         super(code);

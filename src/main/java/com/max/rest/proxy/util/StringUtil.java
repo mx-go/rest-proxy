@@ -11,12 +11,11 @@ public class StringUtil {
         if (objects != null) {
             for (int i = 0; i < objects.length; i++) {
                 Object item = objects[i];
-                objects[i] = Objects.isNull(item) || item.equals("null") ? "" : item;
+                objects[i] = Objects.isNull(item) || "null".equals(item) ? "" : item;
             }
         }else{
             objects=new Object[]{""};
         }
         return String.format(temp, objects);
     }
-
 }
