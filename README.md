@@ -5,23 +5,23 @@ rest接口代理使用方法：
 
 ## 接口注解@RestResource
 
-`value`：对应*rest-proxy.json*中key值。在这里为`sendHttp`。
+`value`：对应*rest-proxy.json*中key值。在这里为*sendHttp*。
 
 `codec`：目前只有一种*com.max.rest.proxy.codec.DefaultRestCodec*。
 
-`contentType`：HTTP请求时的Content-Type。
+`contentType`：HTTP请求时的*Content-Type*。
 
 ## 方法注解
 
-可选有@GET、@POST、@PUT、@DELETE。
+可选有**@GET、@POST、@PUT、@DELETE**。
 
 `value`：请求路径。
 
-`contentType`：HTTP请求时的Content-Type。
+`contentType`：HTTP请求时的*Content-Type*。
 
-`serviceKey`：配置文件中的key。
+`serviceKey`：配置文件中的*key*。
 
-`socketReadTimeoutSecond`：单位秒。socketTimeOut取本值和全局变量最大的一个。
+`socketReadTimeoutSecond`：单位秒。*socketTimeOut*取本值和全局变量最大的一个。
 
 ```java
 @RestResource(value = "sendHttp", codec = "com.max.rest.proxy.codec.DefaultRestCodec", contentType = "application/json")
