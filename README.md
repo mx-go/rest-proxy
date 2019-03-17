@@ -13,7 +13,7 @@ rest接口代理使用方法：
 
 ## 方法注解
 
-可选有**@GET、@POST、@PUT、@DELETE**。
+可选有@GET、@POST、@PUT、@DELETE。
 
 `value`：请求路径。
 
@@ -33,7 +33,7 @@ public interface SendHttp {
 
 # rest调用的配置文件
 
-**rest-proxy.json**
+名称自定义。在xml文件*p:location*配置。**rest-proxy.json**
 
 ```json
 {
