@@ -83,10 +83,8 @@ public class RestClient {
             int statusCode = response.getStatusLine().getStatusCode();
             Map<String, List<String>> headers = Maps.newHashMap();
             Header[] tempHeaders = response.getAllHeaders();
-            for (int i = 0; i < tempHeaders.length; i++) {
-                Header header = tempHeaders[i];
-                if (header.getName() != null &&
-                        CollectionUtils.isEmpty(headers.get(header.getName().toLowerCase()))) {
+            for (Header header : tempHeaders) {
+                if (header.getName() != null && CollectionUtils.isEmpty(headers.get(header.getName().toLowerCase()))) {
                     headers.put(header.getName().toLowerCase(), Lists.newArrayList(header.getValue()));
                 } else {
                     headers.get(header.getName().toLowerCase()).add(header.getValue());

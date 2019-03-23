@@ -3,6 +3,10 @@ package com.max.rest.proxy;
 import lombok.Data;
 import org.springframework.beans.factory.FactoryBean;
 
+/**
+ * @param <T>
+ * @author max
+ */
 @Data
 public class RestServiceProxyFactoryBean<T> implements FactoryBean<T> {
 

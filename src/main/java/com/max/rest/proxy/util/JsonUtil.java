@@ -21,8 +21,9 @@ public abstract class JsonUtil {
 
     private static Gson withNullGson = new GsonBuilder().serializeNulls().
             registerTypeAdapter(Double.class, (JsonSerializer<Double>) (src, typeOfSrc, context) -> {
-                if (src == src.longValue())
+                if (src == src.longValue()) {
                     return new JsonPrimitive(src.longValue());
+                }
                 return new JsonPrimitive(src);
             }).create();
 

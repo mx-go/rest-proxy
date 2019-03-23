@@ -11,6 +11,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
+/**
+ * @author max
+ */
 @Slf4j
 @Data
 public class RestServiceProxyFactory {

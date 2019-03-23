@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Map;
 
+/**
+ * @author max
+ */
 @Data
 public class RestServiceConfig extends ServiceConfig{
 

@@ -7,6 +7,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 默认序列化和反序列化方式。json
+ *
+ * @author max
+ */
 @Slf4j
 public class DefaultRestCodec extends AbstractRestCodeC {
     @Override
