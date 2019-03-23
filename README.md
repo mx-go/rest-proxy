@@ -3,6 +3,14 @@ rest接口代理使用方法：
 
 使用注解表明必要参数。
 
+```java
+@RestResource(value = "sendHttp", codec = "com.max.rest.proxy.codec.DefaultRestCodec", contentType = "application/json")
+public interface SendHttp {
+    @GET(value = "/open/callcenter/param/{test}", desc = "测试方法")
+    String getResult(@PathParam("test") String test);
+}
+```
+
 ## 接口注解@RestResource
 
 `value`：对应*rest-proxy.json*中key值。在这里为*sendHttp*。
@@ -15,7 +23,7 @@ rest接口代理使用方法：
 
 ## 方法注解
 
-可选有@GET、@POST、@PUT、@DELETE。
+可选有@GET、@POST、@PUT、@DELETE四种请求类型。
 
 `value`：请求路径。
 
@@ -27,24 +35,20 @@ rest接口代理使用方法：
 
 `socketReadTimeoutSecond`：单位秒。*socketTimeOut*取本值和全局变量最大的一个。
 
-```java
-@RestResource(value = "sendHttp", codec = "com.max.rest.proxy.codec.DefaultRestCodec", contentType = "application/json")
-public interface SendHttp {
-    @GET(value = "/open/callcenter/param/{test}", desc = "测试方法")
-    String getResult(@PathParam("test") String test);
-}
-```
-
 # rest调用的配置文件
 
-名称自定义。在xml文件*p:location*配置。**rest-proxy.json**
+这里配置是在本地文件，项目中有配置中心可从配置中心拉取。
+
+名称自定义。在xml文件*p:location*配置。
+
+**rest-proxy.json**如下所示：
 
 ```json
 {
   "sendHttp": {
     // http调用域名
     "address": "https://open.ceshi.com",
-    // 名称
+    // 名称，相当与注释作用
     "serviceName":"测试rest调用",
     // socketTimeOut。默认5000
     "socketTimeOut": 20000,
@@ -64,7 +68,7 @@ public interface SendHttp {
 
 <bean id="sendHttp"
           class="com.max.rest.proxy.RestServiceProxyFactoryBean"
-          p:type="com.facishare.open.rainbowhorse.SendHttp">
+          p:type="com.max.open.SendHttp">
         <property name="factory" ref="restServiceProxyFactory"/>
 </bean>
 ```
