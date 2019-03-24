@@ -31,6 +31,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * http请求实际处理类
+ */
 @Slf4j
 public class RestClient {
 

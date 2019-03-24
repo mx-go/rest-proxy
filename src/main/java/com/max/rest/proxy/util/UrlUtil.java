@@ -3,7 +3,6 @@ package com.max.rest.proxy.util;
 import com.google.common.base.Strings;
 import lombok.experimental.UtilityClass;
 
-
 @UtilityClass
 public class UrlUtil {
     /**

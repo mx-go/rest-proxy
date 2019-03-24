@@ -75,5 +75,4 @@ public class RestServiceProxyFactory {
         return constructor.newInstance(declaringClass, allModes)
                 .unreflectSpecial(method, declaringClass);
     }
-
 }

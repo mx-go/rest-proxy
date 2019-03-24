@@ -33,7 +33,7 @@ public class ServiceConfigManager {
     }
 
     private void init() {
-        // 解析json文件
+        // 解析配置文件
         String content = "";
         PathMatchingResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
         Resource[] resources;

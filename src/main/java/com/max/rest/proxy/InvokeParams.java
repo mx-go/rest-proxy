@@ -22,6 +22,9 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 注解解析及组建类
+ */
 @Data
 @Slf4j
 public class InvokeParams {
