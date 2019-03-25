@@ -46,13 +46,13 @@ public interface SendHttp {
 ```json
 {
   "sendHttp": {
-    // http调用域名
+    // http调用域名或IP地址
     "address": "https://open.ceshi.com",
     // 名称，相当与注释作用
     "serviceName":"测试rest调用",
-    // socketTimeOut。默认5000
+    // socketTimeOut。默认5000ms
     "socketTimeOut": 20000,
-    // connectionTimeOut。默认2000
+    // connectionTimeOut。默认2000ms
     "connectionTimeOut": 2000
  	}
 }
