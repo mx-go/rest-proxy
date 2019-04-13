@@ -25,14 +25,14 @@ public class RestServiceProxyFactory {
     /**
      * 配置文件路径
      */
-    private String location;
+    private String configLocation;
 
     public RestServiceProxyFactory() {
 
     }
 
     public void init() {
-        configManager = ServiceConfigManager.build(location);
+        configManager = ServiceConfigManager.build(configLocation);
     }
 
 

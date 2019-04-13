@@ -20,15 +20,15 @@ import java.util.Map;
 @Data
 @Slf4j
 public class ServiceConfigManager {
-    private String location;
+    private String configLocation;
     protected volatile Map<String, RestServiceConfig> serviceConfigMaps = new HashMap<>();
 
-    public static synchronized ServiceConfigManager build(String location) {
-        return new ServiceConfigManager(location);
+    public static synchronized ServiceConfigManager build(String configLocation) {
+        return new ServiceConfigManager(configLocation);
     }
 
-    private ServiceConfigManager(String location) {
-        this.location = location;
+    private ServiceConfigManager(String configLocation) {
+        this.configLocation = configLocation;
         this.init();
     }
 
@@ -38,7 +38,7 @@ public class ServiceConfigManager {
         PathMatchingResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
         Resource[] resources;
         try {
-            resources = resourcePatternResolver.getResources(location);
+            resources = resourcePatternResolver.getResources(configLocation);
             if (resources.length > 1) {
                 log.info("rest-proxy config must be single");
                 return;

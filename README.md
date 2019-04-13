@@ -39,7 +39,7 @@ public interface SendHttp {
 
 这里配置是在本地文件，项目中有配置中心可从配置中心拉取。
 
-名称自定义。在xml文件*p:location*配置。
+名称自定义。在xml文件*p:configLocation*配置。
 
 **rest-proxy.json**如下所示：
 
@@ -63,7 +63,7 @@ public interface SendHttp {
 ```xml
 <bean id="restServiceProxyFactory"
           class="com.max.rest.proxy.RestServiceProxyFactory"
-          p:location="classpath*:rest-proxy.json"
+          p:configLocation="classpath*:rest-proxy.json"
           init-method="init"/>
 
 <bean id="sendHttp"
