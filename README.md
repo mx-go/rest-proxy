@@ -4,7 +4,8 @@ rest接口代理使用方法：
 使用注解表明必要参数。
 
 ```java
-@RestResource(value = "sendHttp", codec = "com.max.rest.proxy.codec.DefaultRestCodec", contentType = "application/json")
+@RestResource(value = "sendHttp", codec = "com.github.rest.proxy.codec.DefaultRestCodec", contentType = 
+"application/json")
 public interface SendHttp {
     @GET(value = "/open/callcenter/param/{test}", desc = "测试方法")
     String getResult(@PathParam("test") String test);
@@ -17,7 +18,7 @@ public interface SendHttp {
 
 `desc`：描述接口的备注，仅作为展示。
 
-`codec`：目前只有一种*com.max.rest.proxy.codec.DefaultRestCodec*。
+`codec`：目前只有一种*com.github.rest.proxy.codec.DefaultRestCodec*。
 
 `contentType`：HTTP请求时的*Content-Type*。
 
@@ -62,12 +63,12 @@ public interface SendHttp {
 
 ```xml
 <bean id="restServiceProxyFactory"
-          class="com.max.rest.proxy.RestServiceProxyFactory"
+          class="com.github.rest.proxy.RestServiceProxyFactory"
           p:configLocation="classpath*:rest-proxy.json"
           init-method="init"/>
 
 <bean id="sendHttp"
-          class="com.max.rest.proxy.RestServiceProxyFactoryBean"
+          class="com.github.rest.proxy.RestServiceProxyFactoryBean"
           p:type="com.max.open.SendHttp">
         <property name="factory" ref="restServiceProxyFactory"/>
 </bean>
